@@ -1,4 +1,6 @@
 const express = require ('express')
+// DEPENDENCIES
+const methodOverride = require('method-override')
 
 //Configuration
 require('dotenv').config()
@@ -14,8 +16,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 
 
-// DEPENDENCIES
-const methodOverride = require('method-override')
+
 
 
 
