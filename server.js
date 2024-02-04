@@ -2,6 +2,8 @@ const express = require ('express')
 const mongoose = require('mongoose')
 
 
+
+
 // DEPENDENCIES
 const methodOverride = require('method-override')
 
@@ -26,18 +28,20 @@ mongoose.connect(process.env.MONGO_URI,
 
 
 
-
-
-
-
 //Routes
 app.get('/', (req, res) => {
     res.send('Welsome to an Awesome App about Breads!')
 })
 
-//Breads
+//breads
 const breadsController = require ('./controllers/breads_controller.js')
 app.use('/breads', breadsController)
+
+
+// bakers 
+const bakersController = require('./controllers/bakers_controller.js')
+app.use('/bakers', bakersController)
+
 
 // 404 Page
 app.get('*', (req, res) => {
